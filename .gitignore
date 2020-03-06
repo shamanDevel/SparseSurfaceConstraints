@@ -1,0 +1,5 @@
+bin/*
+build/*
+.vs/
+*.pyd
+!bin/PhytonBindings3D.pyd

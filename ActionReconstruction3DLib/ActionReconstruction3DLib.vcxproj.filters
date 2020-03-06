@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{ee54a207-c722-4729-b7f0-3d1bfb4c4242}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9346480d-5c49-4a5f-a04b-b46dcdb44899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cuMat">
+      <UniqueIdentifier>{c7856796-2e62-4af0-9330-48a5805f9afd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{7384106e-852e-43d8-b2e4-53872d74d6e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\shaders">
+      <UniqueIdentifier>{67113c69-1696-484c-b6ae-4281419ca302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernels">
+      <UniqueIdentifier>{9e4e2f40-772b-4776-adfc-30c4304f04dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Commons3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helper_math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoftBodySimulation3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helper_matrixmath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoftBodyMesh3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TetMeshVisualization.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Allocator.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\BinaryOps.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\CholeskyDecomposition.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\ConjugateGradient.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Constants.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Context.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\CublasApi.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\CudaUtils.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\CusolverApi.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\CwiseOp.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\DecompositionBase.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\DenseLinAlgOps.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\DevicePointer.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\DisableCompilerWarnings.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\EigenInteropHelpers.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Errors.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\ForwardDeclarations.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\IterativeSolverBase.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Iterator.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Logging.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\LUDecomposition.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Macros.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Matrix.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\MatrixBase.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\MatrixBlock.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\NullaryOps.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\NumTraits.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\ProductOp.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Profiling.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\ReductionOps.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SimpleRandom.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SolverBase.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SparseEvaluation.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SparseMatrix.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SparseProductEvaluation.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\TransposeOp.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\UnaryOps.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundWorker2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonKernels.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputDataLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshReconstruction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VolumeVisualization.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldGrid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryUtils3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoftBodyGrid3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MarchingCubes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Integration3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cuPrintf.cuh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulationResults3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CudaTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AdjointSolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CostFunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SparseExpressionOp.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SparseMatrixBase.h">
+      <Filter>cuMat</Filter>
+    </ClInclude>
+    <ClInclude Include="kernels\ComputeStiffnessMatrixCommons.cuh">
+      <Filter>Kernels</Filter>
+    </ClInclude>
+    <ClInclude Include="PolarDecomposition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrilinearInterpolation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CoordinateTransformation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HaltonSequence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="release_assert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundTruthToSdf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="SoftBodySimulation3D.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="SoftBodyMesh3D.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\CommonKernels_SolveCG.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyMesh3D_ComputeBodyForce.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyMesh3D_ComputeMassMatrix.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\CommonKernels_Newmark.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyMesh3D_ApplyCollisionForces.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VolumeVisualization.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="MeshReconstruction.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="SoftBodyGrid3D.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="DebugUtils.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="MarchingCubes.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="TetMeshVisualization.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ComputeBodyForce.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyMesh3D_ComputeStiffnessMatrix.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ComputeStiffnessMatrix.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ComputeMassMatrix.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ApplyCollisionForces.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Integration3D.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="cuPrintf.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ComputeTransformedBoundingBox.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyGrid3D_GridDiffusion.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyGrid3D_AdvectLevelset.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="WorldGrid.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="AdjointSolver.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="CostFunctions.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="PolarDecomposition.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\AdjointSolver_AdjointApplyCollisionForces.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\CostFunctions_PartialObservations_Preprocess.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\CostFunctions_PartialObservations_EvaluateCamera.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\AdjointSolver_AdjointDiffuseDisplacements.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\CostFunctions_PartialObservations_EvaluateCamera_CPU.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\CostFunctions_PartialObservations_Preprocess_CPU.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ComputeInitialVelocity.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\AdjointSolver_AdjointComputeInitialVelocity.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\CostFunctions_ActiveDisplacements_Evaluate.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\AdjointSolver_AdjointComputeStiffnessMatrix.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="kernels\CostFunctions_PartialObservations_EvaluateCamera_v2.cu">
+      <Filter>Kernels</Filter>
+    </CudaCompile>
+    <CudaCompile Include="GroundTruthToSdf.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\third-party\cuMat\cuMat\src\BinaryOpsPlugin.inl">
+      <Filter>cuMat</Filter>
+    </None>
+    <None Include="..\third-party\cuMat\cuMat\src\DenseLinAlgPlugin.inl">
+      <Filter>cuMat</Filter>
+    </None>
+    <None Include="..\third-party\cuMat\cuMat\src\MatrixBlockPluginLvalue.inl">
+      <Filter>cuMat</Filter>
+    </None>
+    <None Include="..\third-party\cuMat\cuMat\src\MatrixBlockPluginRvalue.inl">
+      <Filter>cuMat</Filter>
+    </None>
+    <None Include="..\third-party\cuMat\cuMat\src\MatrixNullaryOpsPlugin.inl">
+      <Filter>cuMat</Filter>
+    </None>
+    <None Include="..\third-party\cuMat\cuMat\src\ReductionOpsPlugin.inl">
+      <Filter>cuMat</Filter>
+    </None>
+    <None Include="..\third-party\cuMat\cuMat\src\UnaryOpsPlugin.inl">
+      <Filter>cuMat</Filter>
+    </None>
+    <None Include="..\assets\shaders\TetMeshVisualizationSurface.frag">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\TetMeshVisualizationSurface.geom">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\TetMeshVisualizationSurface.vert">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\VolumeVisualizationSlice.frag">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\VolumeVisualizationSlice.vert">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\VolumeVisualizationSurface.frag">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\VolumeVisualizationSurface.vert">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\VolumeVisualizationMC.frag">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\VolumeVisualizationMC.geom">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="..\assets\shaders\VolumeVisualizationMC.vert">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="cuMatLogging.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\third-party\cuMat\cuMat\IterativeLinearSolvers">
+      <Filter>cuMat</Filter>
+    </None>
+    <None Include="..\third-party\cuMat\cuMat\src\SparseExpressionOpPlugin.inl">
+      <Filter>cuMat</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Dummy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputDataLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryUtils3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

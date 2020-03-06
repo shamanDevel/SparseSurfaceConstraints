@@ -1,0 +1,13 @@
+[submodule "third-party/PerlinNoise/include"]
+	path = third-party/PerlinNoise/include
+	url = https://github.com/Reputeless/PerlinNoise.git
+[submodule "third-party/cuMat"]
+	path = third-party/cuMat
+	url = https://gitlab.com/shaman42/cuMat.git
+	branch = master
+[submodule "third-party/thread-pool"]
+	path = third-party/thread-pool
+	url = https://github.com/mtrebi/thread-pool.git
+[submodule "third-party/tinyply"]
+	path = third-party/tinyply
+	url = https://github.com/ddiakopoulos/tinyply.git

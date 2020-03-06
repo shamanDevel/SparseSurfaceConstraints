@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{41DE6145-69C6-4478-A34A-BE582EAA2B96}</ProjectGuid>
+    <RootNamespace>ActionReconstruction3DLib</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <CudaToolkitCustomDir>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0</CudaToolkitCustomDir>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\ActionReconstructionLib;..\third-party\Cinder\include;..\third-party\Boost\include;..\third-party\Bullet\include;..\third-party\Cinder-Bullet3D;..\third-party\tinyformat\include;..\third-party\LBFGSpp\include;..\third-party\cuMat;..\third-party\cuMat\third-party;..\third-party\thread-pool\include</IncludePath>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <TargetName>$(ProjectName)-$(Configuration)</TargetName>
+    <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);..\ActionReconstructionLib;..\third-party\Cinder\include;..\third-party\Boost\include;..\third-party\Bullet\include;..\third-party\Cinder-Bullet3D;..\third-party\tinyformat\include;..\third-party\LBFGSpp\include;..\third-party\cuMat;..\third-party\cuMat\third-party;..\third-party\thread-pool\include</IncludePath>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+    <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)-$(Configuration)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>NOMINMAX;_ENABLE_EXTENDED_ALIGNED_STORAGE;CUMAT_SINGLE_THREAD_CONTEXT=1;CUMAT_LOGGING_PLUGIN="cuMatLogging.inl";CUMAT_EIGEN_SUPPORT=1;CUMAT_VERBOSE_ERROR_CHECKING=1;EIGEN_NO_CUDA=1;WIN32;WIN64;_DEBUG;_CONSOLE;CI_MIN_LOG_LEVEL=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir);..\ActionReconstructionLib;..\third-party\Cinder\include;..\third-party\Boost\include;..\third-party\Bullet\include;..\third-party\Cinder-Bullet3D;..\third-party\tinyformat\include;..\third-party\LBFGSpp\include;..\third-party\cuMat;..\third-party\cuMat\third-party;..\third-party\cuMatExt;..\third-party\thread-pool\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+      <MinimalRebuild>true</MinimalRebuild>
+      <PreprocessToFile>false</PreprocessToFile>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Include>..\ActionReconstructionLib;..\third-party\Cinder\include;..\third-party\Boost\include;..\third-party\Bullet\include;..\third-party\Cinder-Bullet3D;..\third-party\tinyformat\include;..\third-party\LBFGSpp\include;..\third-party\cuMat;..\third-party\cuMat\third-party;..\third-party\thread-pool\include</Include>
+      <Defines>CUMAT_PROFILING=1</Defines>
+      <CodeGeneration>compute_50,sm_50</CodeGeneration>
+      <PtxAsOptionV>true</PtxAsOptionV>
+      <GPUDebugInfo>false</GPUDebugInfo>
+    </CudaCompile>
+    <Lib>
+      <LinkTimeCodeGeneration>false</LinkTimeCodeGeneration>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NOMINMAX;_ENABLE_EXTENDED_ALIGNED_STORAGE;CUMAT_SINGLE_THREAD_CONTEXT=1;CUMAT_LOGGING_PLUGIN="cuMatLogging.inl";CUMAT_EIGEN_SUPPORT=1;CUMAT_VERBOSE_ERROR_CHECKING=1;EIGEN_NO_CUDA=1;WIN32;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir);..\ActionReconstructionLib;..\third-party\Cinder\include;..\third-party\Boost\include;..\third-party\Bullet\include;..\third-party\Cinder-Bullet3D;..\third-party\tinyformat\include;..\third-party\LBFGSpp\include;..\third-party\cuMat;..\third-party\cuMat\third-party;..\third-party\cuMatExt;..\third-party\thread-pool\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <OpenMPSupport>true</OpenMPSupport>
+      <MinimalRebuild>true</MinimalRebuild>
+      <PreprocessToFile>false</PreprocessToFile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <TargetMachinePlatform>64</TargetMachinePlatform>
+      <GenerateRelocatableDeviceCode>true</GenerateRelocatableDeviceCode>
+      <Include>..\ActionReconstructionLib;..\third-party\Cinder\include;..\third-party\Boost\include;..\third-party\Bullet\include;..\third-party\Cinder-Bullet3D;..\third-party\tinyformat\include;..\third-party\LBFGSpp\include;..\third-party\cuMat;..\third-party\cuMat\third-party;..\third-party\thread-pool\include</Include>
+      <CodeGeneration>compute_50,sm_50</CodeGeneration>
+      <PtxAsOptionV>true</PtxAsOptionV>
+    </CudaCompile>
+    <Lib>
+      <LinkTimeCodeGeneration>false</LinkTimeCodeGeneration>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CudaCompile Include="AdjointSolver.cu" />
+    <CudaCompile Include="CostFunctions.cu" />
+    <CudaCompile Include="cuPrintf.cu" />
+    <CudaCompile Include="GroundTruthToSdf.cu" />
+    <CudaCompile Include="kernels\AdjointSolver_AdjointApplyCollisionForces.cu" />
+    <CudaCompile Include="kernels\AdjointSolver_AdjointComputeInitialVelocity.cu" />
+    <CudaCompile Include="kernels\AdjointSolver_AdjointDiffuseDisplacements.cu" />
+    <CudaCompile Include="kernels\AdjointSolver_AdjointComputeStiffnessMatrix.cu">
+      <GPUDebugInfo Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GPUDebugInfo>
+    </CudaCompile>
+    <CudaCompile Include="kernels\CommonKernels_Newmark.cu" />
+    <CudaCompile Include="kernels\CommonKernels_SolveCG.cu" />
+    <CudaCompile Include="kernels\CostFunctions_ActiveDisplacements_Evaluate.cu" />
+    <CudaCompile Include="kernels\CostFunctions_PartialObservations_EvaluateCamera.cu" />
+    <CudaCompile Include="kernels\CostFunctions_PartialObservations_EvaluateCamera_CPU.cu" />
+    <CudaCompile Include="kernels\CostFunctions_PartialObservations_EvaluateCamera_v2.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </CudaCompile>
+    <CudaCompile Include="kernels\CostFunctions_PartialObservations_Preprocess.cu" />
+    <CudaCompile Include="kernels\CostFunctions_PartialObservations_Preprocess_CPU.cu" />
+    <CudaCompile Include="kernels\SoftBodyGrid3D_AdvectLevelset.cu" />
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ApplyCollisionForces.cu" />
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ComputeInitialVelocity.cu" />
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ComputeMassMatrix.cu" />
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ComputeBodyForce.cu" />
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ComputeStiffnessMatrix.cu" />
+    <CudaCompile Include="kernels\SoftBodyGrid3D_ComputeTransformedBoundingBox.cu" />
+    <CudaCompile Include="kernels\SoftBodyGrid3D_GridDiffusion.cu" />
+    <CudaCompile Include="kernels\SoftBodyMesh3D_ApplyCollisionForces.cu" />
+    <CudaCompile Include="kernels\SoftBodyMesh3D_ComputeBodyForce.cu" />
+    <CudaCompile Include="kernels\SoftBodyMesh3D_ComputeStiffnessMatrix.cu" />
+    <CudaCompile Include="kernels\SoftBodyMesh3D_ComputeMassMatrix.cu" />
+    <CudaCompile Include="PolarDecomposition.cu" />
+    <CudaCompile Include="SoftBodyGrid3D.cu" />
+    <CudaCompile Include="SoftBodySimulation3D.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Allocator.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\BinaryOps.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\CholeskyDecomposition.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\ConjugateGradient.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Constants.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Context.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\CublasApi.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\CudaUtils.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\CusolverApi.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\CwiseOp.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\DecompositionBase.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\DenseLinAlgOps.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\DevicePointer.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\DisableCompilerWarnings.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\EigenInteropHelpers.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Errors.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\ForwardDeclarations.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\IterativeSolverBase.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Iterator.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Logging.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\LUDecomposition.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Macros.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Matrix.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\MatrixBase.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\MatrixBlock.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\NullaryOps.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\NumTraits.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\ProductOp.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\Profiling.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\ReductionOps.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SimpleRandom.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SolverBase.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SparseEvaluation.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SparseExpressionOp.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SparseMatrix.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SparseMatrixBase.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\SparseProductEvaluation.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\TransposeOp.h" />
+    <ClInclude Include="..\third-party\cuMat\cuMat\src\UnaryOps.h" />
+    <ClInclude Include="AdjointSolver.h" />
+    <ClInclude Include="BackgroundWorker2.h" />
+    <ClInclude Include="CommonKernels.h" />
+    <ClInclude Include="Commons3D.h" />
+    <ClInclude Include="CoordinateTransformation.h" />
+    <ClInclude Include="CostFunctions.h" />
+    <ClInclude Include="CudaTimer.h" />
+    <ClInclude Include="cuPrintf.cuh" />
+    <ClInclude Include="DataCamera.h" />
+    <ClInclude Include="DebugUtils.h" />
+    <ClInclude Include="GeometryUtils3D.h" />
+    <ClInclude Include="GroundTruthToSdf.h" />
+    <ClInclude Include="HaltonSequence.h" />
+    <ClInclude Include="InputConfig.h" />
+    <ClInclude Include="InputDataLoader.h" />
+    <ClInclude Include="Integration3D.h" />
+    <ClInclude Include="kernels\ComputeStiffnessMatrixCommons.cuh" />
+    <ClInclude Include="MarchingCubes.h" />
+    <ClInclude Include="MeshReconstruction.h" />
+    <ClInclude Include="PolarDecomposition.h" />
+    <ClInclude Include="release_assert.h" />
+    <ClInclude Include="SimulationResults3D.h" />
+    <ClInclude Include="SoftBodyGrid3D.h" />
+    <ClInclude Include="TetMeshVisualization.h" />
+    <ClInclude Include="helper_math.h" />
+    <ClInclude Include="helper_matrixmath.h" />
+    <ClInclude Include="SoftBodyMesh3D.h" />
+    <ClInclude Include="SoftBodySimulation3D.h" />
+    <ClInclude Include="TrilinearInterpolation.h" />
+    <ClInclude Include="Utils3D.h" />
+    <ClInclude Include="VolumeVisualization.h" />
+    <ClInclude Include="WorldGrid.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="SoftBodyMesh3D.cu">
+      <FileType>Document</FileType>
+      <PtxAsOptionV Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</PtxAsOptionV>
+      <PtxAsOptionV Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</PtxAsOptionV>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="TetMeshVisualization.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\assets\shaders\TetMeshVisualizationSurface.frag" />
+    <None Include="..\assets\shaders\TetMeshVisualizationSurface.geom" />
+    <None Include="..\assets\shaders\TetMeshVisualizationSurface.vert" />
+    <None Include="..\assets\shaders\VolumeVisualizationMC.frag" />
+    <None Include="..\assets\shaders\VolumeVisualizationMC.geom" />
+    <None Include="..\assets\shaders\VolumeVisualizationMC.vert" />
+    <None Include="..\assets\shaders\VolumeVisualizationSlice.frag" />
+    <None Include="..\assets\shaders\VolumeVisualizationSlice.vert" />
+    <None Include="..\assets\shaders\VolumeVisualizationSurface.frag" />
+    <None Include="..\assets\shaders\VolumeVisualizationSurface.vert" />
+    <None Include="..\third-party\cuMat\cuMat\IterativeLinearSolvers" />
+    <None Include="..\third-party\cuMat\cuMat\src\BinaryOpsPlugin.inl" />
+    <None Include="..\third-party\cuMat\cuMat\src\DenseLinAlgPlugin.inl" />
+    <None Include="..\third-party\cuMat\cuMat\src\MatrixBlockPluginLvalue.inl" />
+    <None Include="..\third-party\cuMat\cuMat\src\MatrixBlockPluginRvalue.inl" />
+    <None Include="..\third-party\cuMat\cuMat\src\MatrixNullaryOpsPlugin.inl" />
+    <None Include="..\third-party\cuMat\cuMat\src\ReductionOpsPlugin.inl" />
+    <None Include="..\third-party\cuMat\cuMat\src\SparseExpressionOpPlugin.inl" />
+    <None Include="..\third-party\cuMat\cuMat\src\UnaryOpsPlugin.inl" />
+    <None Include="cuMatLogging.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GeometryUtils3D.cpp" />
+    <ClCompile Include="InputConfig.cpp" />
+    <ClCompile Include="InputDataLoader.cpp" />
+    <CudaCompile Include="Integration3D.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+    <CudaCompile Include="MarchingCubes.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+    <CudaCompile Include="MeshReconstruction.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+    <CudaCompile Include="VolumeVisualization.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+    <CudaCompile Include="WorldGrid.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+    <CudaCompile Include="DebugUtils.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+    <ClCompile Include="DataCamera.cpp" />
+    <ClCompile Include="Dummy.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.0.targets" />
+  </ImportGroup>
+</Project>

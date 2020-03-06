@@ -1,0 +1,29 @@
+real hyperStepsize = 1;
+real hyperStep = 0;
+static const real hyperEpsilon = 1e-4;
+VectorX finalValue = referenceDeformedPosition; //The initial value for optimization is the deformed position
+while (true)
+{
+	simulation.setGravity((hyperStep + hyperStepsize) * gravity); //Try optimization with ((hyperStep + hyperStepsize) * 100)% of the final gravity
+	VectorX currentValue = finalValue;
+	//minimize for reference position, initial position = currentValue, with referenceDeformedPosition as target
+	real cost = lbfgs.minimize(simulation, referenceDeformedPosition, currentValue);
+	if (finalCost > hyperEpsilon)
+	{
+		//not converged to global minimum, try smaller step
+		hyperStepsize /= 2;
+		log("Not converged (cost " << finalCost << "), decrease hyper-stepsize to " << hyperStepsize);
+	} else
+	{
+		//converged, increase gravity
+		finalValue = currentValue;
+		hyperStep += hyperStepsize;
+		hyperStepsize *= 1.2;
+		log("Converged, take " << hyperStep * 100 << "% of the final gravity as input to the next step and increase the step size to " << hyperStepsize);
+		if (hyperStep >= 1 - 1e-5)
+			break; //finished
+		if (hyperStep + hyperStepsize > 1)
+			hyperStepsize = 1 - hyperStep;
+	}
+}
+//final value contains the reconstructed initial positions
