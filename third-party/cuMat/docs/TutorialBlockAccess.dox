@@ -1,0 +1,62 @@
+namespace cuMat {
+
+/** \page TutorialBlockAccess Matrix Blocks and Slices
+
+This tutorial explains how to use block operations. A block is a rectangular part (3D: rows, columsn, batches) of a matrix. Block expressions can be used both as rvalues and lvalues.
+
+\section TutorialBlockAccess_Blocks General block operations
+
+The most general block operation in cuMat is called \link MatrixBase::block() .block() \endlink.
+There are two versions, whose syntax is as follows:
+
+<table>
+<tr><th>\b %Block \b operation</td>
+<th>Version constructing a \n dynamic-size block expression</th>
+<th>Version constructing a \n fixed-size block expression</th></tr>
+<tr><td>%Block of size <tt>(p,q,r)</tt>, starting at <tt>(i,j,k)</tt></td>
+    <td>\code
+matrix.block(i,j,k,p,q,r);\endcode </td>
+    <td>\code 
+matrix.block<p,q,r>(i,j,k);\endcode </td>
+</tr>
+</table>
+
+Block operations can be used on any matrix expressions.
+This means, something like \code (matrix1 + matrix2).block<1,1,1>(0,0,0) \endcode evalutes and returns only the entry at index 0,0,0.
+
+Further, block expressions can be used as lvalues as well. This, however, is only available on dense matrices (no matrix expression).
+<table>
+<tr><th>Example:</th><th>Output:</th></tr>
+<tr><td>
+\include TutorialBlocks_lvalue.cu
+</td>
+<td>
+\verbinclude TutorialBlocks_lvalue.out
+</td></tr></table>
+
+\section TutorialBlockAccess_SpecMatrix Specializations: Matrix
+
+For matrices, the following convenience methods are also defined:
+<table>
+<tr><th>\b Method </th><th>Expressed as block</th></tr>
+<tr><td>\c row(index)</td><td>\code block<1,Columns,Batches>(index, 0, 0)\endcode</td></tr>
+<tr><td>\c col(index)</td><td>\code block<Rows,1,Batches>(0, index, 0)\endcode</td></tr>
+<tr><td>\c slice(index)</td><td>\code block<Rows,Columns,1>(0, 0, index)\endcode</td></tr>
+</table>
+
+\section TutorialBlockAccess_SpecVector Specializations: Vector
+
+For vectors (row or column vector), the following convenience methods are defined:
+The returned type is again a row or column vector expression
+<table>
+<tr><th>\b Method </th><th>Description</th></tr>
+<tr><td>\code segment<N>(int index)\endcode</td><td>The segment of size N starting at the given index, compile-time size</td></tr>
+<tr><td>\code segment(int index, int N)\endcode</td><td>The segment of size N starting at the given index, dynamic size</td></tr>
+<tr><td>\code head<N>()\endcode</td><td>The first N elements, compile-time size</td></tr>
+<tr><td>\code head(int N)\endcode</td><td>The first N elements, dynamic size</td></tr>
+<tr><td>\code tail<N>()\endcode</td><td>The last N elements, compile-time size</td></tr>
+<tr><td>\code tail(int N)\endcode</td><td>The last N elements, dynamic size</td></tr>
+</table>
+*/
+
+}

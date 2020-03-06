@@ -1,0 +1,37 @@
+image: nvidia/cuda:9.2-devel
+
+before_script:
+  - apt-get update && apt-get install -y --no-install-recommends cmake doxygen
+
+stages:
+  - prepare
+  - build
+
+prepare:
+  stage: prepare
+  script:
+  - mkdir build
+  - cd build/
+  - cmake -DCUDA_VERBOSE_BUILD=ON -DCUMAT_SEPARATE_TESTS=ON ..
+  artifacts:
+    paths:
+    - build
+
+pages:
+  image: aergus/latex
+  stage: build
+  script:
+  - doxygen build/docs/Doxyfile
+  - mv build/docs/doc_doxygen/html/ public/
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+
+test_compile:
+  stage: build
+  script:
+  - cd build/
+  - make
+  

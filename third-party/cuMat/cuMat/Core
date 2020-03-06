@@ -1,0 +1,32 @@
+
+
+/*
+Specifies the core modules.
+This enables all BLAS-related modules
+*/
+
+//first thing: tell the compiler to ignore some stuid warnings
+#include "src/DisableCompilerWarnings.h"
+
+#include "src/Macros.h"
+#include "src/ForwardDeclarations.h"
+#include "src/NumTraits.h"
+
+#include "src/Logging.h"
+#include "src/Errors.h"
+#include "src/Context.h"
+
+#include "src/MatrixBase.h"
+#include "src/Matrix.h"
+#include "src/MatrixBlock.h"
+#include "src/EigenInteropHelpers.h"
+
+#include "src/Iterator.h"
+#include "src/NullaryOps.h"
+#include "src/UnaryOps.h"
+#include "src/TransposeOp.h"
+#include "src/BinaryOps.h"
+#include "src/ReductionOps.h"
+#include "src/ProductOp.h"
+
+#include "src/SimpleRandom.h"
