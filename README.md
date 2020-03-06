@@ -4,7 +4,7 @@ Reference implementation of "Sparse Surface Constraints for Combining Physics-ba
 
 A short tutorial on how to use the code.
 
-Datasets and binaries: https://gitlab.com/shaman42/inverseelasticity-data
+See the Releases-page for datasets, binaries and benchmark results
 
 # Projects in the solution
  - Libraries:
