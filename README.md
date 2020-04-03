@@ -1,12 +1,36 @@
-# InverseElasticity
+# Sparse Surface Constraints for Combining Physics-based Elasticity Simulation and Correspondence-Free Object Reconstruction (CVPR 2020)
+[Sebastian Weiss](https://www.in.tum.de/cg/people/weiss/), [Robert Maier](https://vision.in.tum.de/members/maierr), [Daniel Cremers](https://vision.in.tum.de/members/cremers), [Ruediger Westermann](https://www.in.tum.de/cg/people/westermann/), [Nils Thuerey](https://ge.in.tum.de/about/n-thuerey/)
+Technical University of Munich
 
+![Teaser Image](https://www.in.tum.de/fileadmin/_processed_/6/e/csm_teaser_d76adfc3ba.jpg)
+
+### License ###
+This software, excluding third party libraries, is distributed under the MIT open source license. See `LICENSE` for details.
+
+### Resources ###
+* [Project page](https://www.in.tum.de/cg/research/publications/2019/sparse-surface-constraints-for-combining-physics-based-elasticity-simulation-and-correspondence-free-object-reconstruction/)
+* [Preprint (PDF)](http://arxiv.org/abs/1910.01812)
+
+[![Supplemental Video](https://img.youtube.com/vi/mC7cbiiaWNw/0.jpg)](https://www.youtube.com/watch?v=mC7cbiiaWNw)
+
+### Citation
+If you find this source code or the paper useful in your research, please cite our work as follows:
+```
+@article{weiss2019sparse-surface-constraints,
+author = {Sebastian Weiss and Robert Maier and R{\"{u}}diger Westermann and Daniel Cremers and Nils Thuerey},
+title = {Sparse Surface Constraints for Combining Physics-based Elasticity Simulation and Correspondence-Free Object Reconstruction},
+year = {2019},
+url       = {http://arxiv.org/abs/1910.01812},
+eprint = {arXiv:1910.01812},
+}
+```
+
+## Source Code
 Reference implementation of "Sparse Surface Constraints for Combining Physics-based Elasticity Simulation and Correspondence-Free Object Reconstruction"
-
-A short tutorial on how to use the code.
 
 See the Releases-page for datasets, binaries and benchmark results
 
-# Projects in the solution
+### Projects in the solution
  - Libraries:
    - ActionReconstructionLib: 2D simulation code, no CUDA dependency
    - ActionReconstruction3DLib: 3D simulation code
@@ -18,7 +42,7 @@ See the Releases-page for datasets, binaries and benchmark results
  - Remaining projects are benchmarks (projects ending in 'Benchmarks') or tests (ending in 'Test')
 
 
-# HowTo simulate in 2D
+### HowTo simulate in 2D
 (Based on SoftBodyFEM2DApp.cpp in the project SoftBodyFEMApp)
 
 Assume all includes and namespaces are imported.
@@ -66,7 +90,7 @@ solver.solveGrid(numTimesteps, worker, [this](const InverseProblemOutput& interm
 });
 ```
 
-# HowTo simulate in 3D
+### HowTo simulate in 3D
 (Based on SoftBody3DApp.cu)
 
 Load input from an SDF file. See the other SoftBodyGrid3D::create... methods for alternatives.
@@ -117,12 +141,12 @@ AdjointSolver::Callback_t callback = [&](const ar3d::SoftBodySimulation3D::Setti
 solver.solve(callback, &worker);
 ```
 
-# UI
+### UI
 
 Graphical output was done with Cinder.
 For 2D, have a look at GridVisualization.h in ActionReconstructionLib
 For 3D, have a look at VolumeVisulization.h in ActionReconstruction3DLib
 
-# Contanct
+## Contact
 
 If you have any questions, feel free to contact me: Sebastian Weiss, sebastian13.weiss@tum.de
