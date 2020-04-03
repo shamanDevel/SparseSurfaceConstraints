@@ -16,12 +16,13 @@ This software, excluding third party libraries, is distributed under the MIT ope
 ### Citation
 If you find this source code or the paper useful in your research, please cite our work as follows:
 ```
-@article{weiss2019sparse-surface-constraints,
-author = {Sebastian Weiss and Robert Maier and R{\"{u}}diger Westermann and Daniel Cremers and Nils Thuerey},
-title = {Sparse Surface Constraints for Combining Physics-based Elasticity Simulation and Correspondence-Free Object Reconstruction},
-year = {2019},
-url       = {http://arxiv.org/abs/1910.01812},
-eprint = {arXiv:1910.01812},
+@inproceedings{weiss2020correspondence,
+    title={Correspondence-Free Material Reconstruction using Sparse Surface Constraints},
+    author={Weiss, S. and Maier, R. and Cremers, D. and Westermann, R. and Thuerey, N.},
+    booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year={2020},
+    month={June},
+    address={Seattle, WA, USA}
 }
 ```
 
